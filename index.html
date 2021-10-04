@@ -21,13 +21,13 @@
     </header>
 
     <p>Click the colour bars below to display the info!</p>
-
+    <!-- The colour bars container ------------------------------------------->
     <main class="main">
       <div class="colourBar">
-        <div class="hide colName"></div>
-        <div class="hide colRgb"></div>
-        <div class="hide colHsl"></div>
-        <div class="hide colHex"></div>
+        <div class="hide colName" value="blue"></div>
+        <div class="hide colRgb" value="test_2"></div>
+        <div class="hide colHsl" value="test_3"></div>
+        <div class="hide colHex" value="test_4"></div>
       </div>
 
       <div class="colourBar">
@@ -46,7 +46,36 @@
 
     </main>
 
+    <!-- The cover for the colour info modal -------------------------->
+    <div class="modalCover hide"></div>
 
+    <!-- The colour info modal ---------------------------------------->
+    <div class="colourModal hide">
+
+      <div class="colourBox" id="colBox"></div>
+
+      <div>
+        <h3>Name</h3>
+        <p id="nameText">The name value</p>
+      </div>
+
+      <div>
+        <h3>RGB</h3>
+        <p id="rgbText">The rgb value</p>
+      </div>
+
+      <div>
+        <h3>HSL</h3>
+        <p id="hslText">The hsl value</p>
+      </div>
+
+      <div>
+        <h3>Hexadecimal</h3>
+        <p id="hexText">The hex value</p>
+      </div>
+
+      <button type="button" name="button" id="closeBut">Click to close!</button>
+    </div>
 
   </body>
 </html>

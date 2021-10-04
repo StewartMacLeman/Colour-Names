@@ -15,14 +15,28 @@ body {
 
 h1 { font-size: 3rem; }
 h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
 p { font-size: 1.75rem; }
+button { font-size: 1.75rem; }
 
-h1, h2, p {
+h1, h2, h3, p, button {
   font-family: verdana, helvetica, sans-serif;
   text-align: center;
   margin: 0 auto .25rem;
   padding: .15rem;
   background-color: none;
+}
+/* Button styles. ------------------------------------------------------ */
+button {
+  color: white;
+  background-color: black;
+  border-radius: 8px;
+  padding: .15rem .25rem;
+}
+button:hover {
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 /* Header styles. ------------------------------------------------------ */
 .header {
@@ -47,12 +61,53 @@ h1, h2, p {
   border: .15rem solid black;
   background-color: white;
 }
-
-/* Hide class. ---------------------------------------------------- */
+/* The Modal Cover. -------------------------------------------------------- */
+.modalCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: grey;
+  opacity: 50%;
+}
+/* The colour info modal. ------------------------------------------------- */
+.colourModal {
+  width: 91%;
+  height: 80%;
+  border: .2rem solid black;
+  background-color: white;
+  position: fixed;
+  top: 19%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+.colourBox {
+  width: 90%;
+  height: 20%;
+  border: .15rem solid black;
+}
+.colourModal h3 {
+  text-decoration: underline;
+}
+.colourModal p {
+  font-family: monospace;
+}
+.colourModal div {
+  margin-bottom: .5rem;
+}
+.colourModal button {
+  min-width: 50%;
+}
+/* Hide class. ----------------------------------------------------------- */
 .hide {
   display: none;
 }
-/* Media queries. ------------------------------------------------- */
+/* Media queries. --------------------------------------------------------- */
 @media screen and (min-width: 1050px) {
   body { width: 80%; }
 }
@@ -66,4 +121,12 @@ h1, h2, p {
 }
 @media screen and (max-width: 400px) and (max-height: 600px) {
   .header { height: 14%; }
+  .colourModal {
+    top: 15%;
+    height: 80;
+  }
+  .colourModal button {
+    margin-top: 3rem;
+    padding: 1rem 0;
+  }
 }
