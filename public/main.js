@@ -12,9 +12,14 @@ let rgbParagraph = document.getElementById("rgbText");
 let hslParagraph = document.getElementById("hslText");
 let hexParagraph = document.getElementById("hexText");
 
-// Display the colour info modal. --------------------------------------
+// Display the colour info modal. Add the background colours to the bars. -----
 for (let i = 0; i < colourBarDivs.length; i++){
   colourBarDivs[i].addEventListener("click", displayInfo);
+
+  let innerColourDiv = colourBarDivs[i].querySelector(".colName");
+  let innerName = innerColourDiv.getAttribute("value");
+
+  colourBarDivs[i].style.backgroundColor = innerName;
 }
 
 function displayInfo(e) {
@@ -34,8 +39,8 @@ function displayInfo(e) {
 
   colBoxDiv.style.backgroundColor = innerName;
   nameParagraph.textContent = innerName;
-  rgbParagraph.textContent = innerRgb;
-  hslParagraph.textContent = innerHsl;
+  rgbParagraph.textContent = "rgb" + innerRgb;
+  hslParagraph.textContent = "hsl" + innerHsl;
   hexParagraph.textContent = innerHex;
 
   coverModalDiv.classList.remove("hide");

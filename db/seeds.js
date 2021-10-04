@@ -1,4 +1,4 @@
-use colourNameDB;
+use coloursNameDB;
 db.dropDatabase();
 
 db.colours.insertMany([
