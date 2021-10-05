@@ -15,8 +15,8 @@ let hexParagraph = document.getElementById("hexText");
 // Display the colour info modal. Add the background colours to the bars. -----
 for (let i = 0; i < colourBarDivs.length; i++){
   colourBarDivs[i].addEventListener("click", displayInfo);
-
-  let innerColourDiv = colourBarDivs[i].querySelector(".colName");
+  // Hexadecimal has been used for consistent results when used for the "backgroundColor" property.
+  let innerColourDiv = colourBarDivs[i].querySelector(".colHex");
   let innerName = innerColourDiv.getAttribute("value");
 
   colourBarDivs[i].style.backgroundColor = innerName;
@@ -37,7 +37,8 @@ function displayInfo(e) {
   let innerHexDiv = clickedBar.querySelector(".colHex");
   let innerHex = innerHexDiv.getAttribute("value");
 
-  colBoxDiv.style.backgroundColor = innerName;
+  colBoxDiv.style.backgroundColor = innerHex;
+  // innerName has inconsistent results when used for the "backgroundColor"!
   nameParagraph.textContent = innerName;
   rgbParagraph.textContent = "rgb" + innerRgb;
   hslParagraph.textContent = "hsl" + innerHsl;
@@ -53,4 +54,6 @@ closeModalButton.addEventListener("click", closeModal);
 function closeModal(){
   coverModalDiv.classList.add("hide");
   colourModalDiv.classList.add("hide");
+
+  colBoxDiv.style.backgroundColor = "";
 }
