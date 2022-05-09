@@ -13,17 +13,17 @@ body {
   height: 100vh;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-p { font-size: 1.75rem; }
-button { font-size: 1.75rem; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.7rem; }
+h3 { font-size: 1.2rem; }
+p { font-size: 1rem; }
+button { font-size: 1rem; }
 
 h1, h2, h3, p, button {
   font-family: verdana, helvetica, sans-serif;
   text-align: center;
   margin: 0 auto .25rem;
-  padding: .15rem;
+  padding: .05rem .15rem;
   background-color: none;
 }
 /* Button styles. ------------------------------------------------------ */
@@ -41,14 +41,14 @@ button:hover {
 /* Header styles. ------------------------------------------------------ */
 .header {
   width: 100%;
-  height: 18%;
+  /* min-height: 17%; */
   margin: 0 auto 1.5rem;
   background-color: lightyellow;
 }
 /* Main / colour bars containers ----------------------------------------*/
 .main {
   width: 90%;
-  height: 70%;
+  max-height: 65vh;
   margin: 0 auto 1.5rem;
   border: .2rem solid black;
   background-color: lightyellow;
@@ -79,16 +79,17 @@ button:hover {
   border: .2rem solid black;
   background-color: white;
   position: fixed;
-  top: 19%;
+  top: 19.5%;
   z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   padding-top: 2rem;
 }
 .colourBox {
   width: 90%;
-  height: 20%;
+  height: 15%;
   border: .15rem solid black;
 }
 .colourModal h3 {
@@ -113,20 +114,25 @@ button:hover {
 }
 @media screen and (max-width: 800px) {
   html { font-size: 12px; }
-  .header { height: 14%; }
+  h3 { font-size: 1.4rem; }
+  p, button { font-size: 1.2rem; }
+  .colourModal { top: 15%; }
 }
-@media screen and (max-width: 600px) {
-  html { font-size: 8px; }
-  .header { height: 10%; }
+@media screen and (max-width: 570px ){
+  html { font-size: 10px; }
 }
-@media screen and (max-width: 400px) and (max-height: 600px) {
-  .header { height: 14%; }
-  .colourModal {
-    top: 15%;
-    height: 80;
+@media screen and (max-width: 400px) and (max-height: 700px) {
+  html { font-size: 12px; }
+  .main { max-height: 80vh; }
+  p, button { font-size: 1.7rem; }
+  .colourModal { 
+    width: 95%;
+    height: 85%; 
   }
+  .colourBar { height: 12%; }
   .colourModal button {
-    margin-top: 3rem;
-    padding: 1rem 0;
+    width: 75%;
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
   }
 }
