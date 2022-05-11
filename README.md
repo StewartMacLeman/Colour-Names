@@ -2,7 +2,7 @@
 
 An app that displays the various ways to represent a colour when using CSS.
 
-## Build with:
+## Built with:
 * Express
 * Mongoose
 * EJS
